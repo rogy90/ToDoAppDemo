@@ -1,0 +1,43 @@
+# =============================================================================
+# REQUIREMENTS.TXT - Python Dependencies for TodoMVC Playwright Tests
+# =============================================================================
+# This file lists all Python packages required to run the automated tests.
+# Install with: pip install -r requirements.txt
+# =============================================================================
+
+# pytest - The main testing framework for Python
+# Provides test discovery, execution, and reporting capabilities
+# Documentation: https://docs.pytest.org/
+pytest>=8.0.0
+
+# pytest-playwright - Pytest plugin for Playwright integration
+# Enables Playwright fixtures (page, context, browser) in pytest tests
+# Documentation: https://playwright.dev/python/docs/test-runners
+pytest-playwright>=0.5.0
+
+# playwright - Microsoft's browser automation library
+# Supports Chromium, Firefox, and WebKit browsers
+# Install browsers with: playwright install
+# Documentation: https://playwright.dev/python/
+playwright>=1.51.0
+
+# pytest-html - Plugin for generating HTML test reports
+# Optional but useful for visual test result presentation
+pytest-html>=4.1.0
+
+# =============================================================================
+# Code Quality Tools (Optional but Recommended)
+# =============================================================================
+# These tools help maintain code quality and catch bugs early.
+
+# ruff - Fast Python linter and formatter written in Rust
+# Combines flake8, isort, black, and many more tools into one
+# Runs 10-100x faster than traditional Python linters
+# Documentation: https://docs.astral.sh/ruff/
+ruff>=0.8.0
+
+# mypy - Static type checker for Python
+# Catches type errors before runtime
+# Improves code documentation and IDE support
+# Documentation: https://mypy.readthedocs.io/
+mypy>=1.10.0

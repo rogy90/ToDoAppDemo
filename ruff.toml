@@ -1,0 +1,65 @@
+# =============================================================================
+# RUFF.TOML - Ruff Configuration File
+# =============================================================================
+# Ruff is a fast Python linter and formatter written in Rust.
+# This configuration defines linting rules and formatting preferences.
+# Reference: https://docs.astral.sh/ruff/configuration/
+# =============================================================================
+
+# Target Python version - ensures rules are appropriate for this version
+# Python 3.10 is a reasonable minimum for modern projects
+target-version = "py310"
+
+# Line length for formatting (matches project's style preference)
+line-length = 100
+
+# =============================================================================
+# LINTING RULES
+# =============================================================================
+# Enable specific rule categories for linting
+# Each category catches different types of issues
+# =============================================================================
+
+[lint]
+# Select rules to enable
+# E - pycodestyle errors (syntax, indentation, etc.)
+# F - Pyflakes (unused imports, undefined names, etc.)
+# W - pycodestyle warnings
+# I - isort (import sorting)
+# N - pep8-naming (function/class naming conventions)
+# UP - pyupgrade (modernize code to newer Python patterns)
+select = ["E", "F", "W", "I", "N", "UP"]
+
+# Ignore specific rules that are too strict or not relevant
+# E501 - Line too long (handled by formatter with line-length)
+ignore = ["E501"]
+
+# =============================================================================
+# FORMATTER SETTINGS
+# =============================================================================
+# Control code formatting behavior
+# =============================================================================
+
+[format]
+# Use double quotes for strings (consistent with Playwright conventions)
+quote-style = "double"
+
+# Use 4 spaces for indentation (standard Python convention)
+indent-style = "space"
+
+# =============================================================================
+# SPECIFIC RULE CONFIGURATIONS
+# =============================================================================
+# Fine-tune specific rules as needed
+# =============================================================================
+
+[lint.per-file-ignores]
+# Ignore certain rules for specific files
+# __init__.py - Allow unused imports (common for package exports)
+"__init__.py" = ["F401"]
+# test files - Allow certain conventions that make tests more readable
+"tests/*.py" = ["F401", "N"]
+
+[lint.isort]
+# Known first-party modules (can be extended)
+known-first-party = ["pages", "tests"]
